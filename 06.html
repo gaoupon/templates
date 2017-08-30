@@ -58,12 +58,12 @@
                             <th style="padding:7px 10px;text-align:left;border:1px solid #ddd;">冻结原因</th>
                           </tr>
                         </thead>
-                        {{range .Domains}}
+                        {{range .DataForTpl.tplData}}
                         {{with .}}
                         <tr>
-                          <td style="width:150px;padding:7px 10px;text-align:left;border:1px solid #ddd;">{{.Name}}</td>
-                          <td style="width:100px;padding:7px 10px;text-align:left;border:1px solid #ddd;">{{.FrozenTime}}</td>
-                          <td style="padding:7px 10px;text-align:left;border:1px solid #ddd;">{{.FrozenReason}}</td>
+                          <td style="padding:7px 10px;text-align:left;border:1px solid #ddd;">{{.name}}</td>
+                          <td style="width:150px;padding:7px 10px;text-align:left;border:1px solid #ddd;">{{.operateAt.Format "2006-01-02 15:04:00"}}</td>
+                          <td style="width:100px;padding:7px 10px;text-align:left;border:1px solid #ddd;">{{.reason}}</td>
                         </tr>
                         {{end}}
                         {{end}}
