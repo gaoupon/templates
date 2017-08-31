@@ -20,7 +20,7 @@
                           <img src="http://7xkjur.com2.z0.glb.qiniucdn.com/poffineqiniulogo.png" width="54">
                         </a>
                       </td>
-                      <td style="font-size: 24px;color:#292c33;">【七牛云】域名解冻通知</td>
+                      <td style="font-size: 24px;color:#292c33;">【七牛云】SSL证书已过期</td>
                     </tr>
                   </tbody>
                 </table>
@@ -42,26 +42,36 @@
                   </tr>
                   <tr height="30">
                     <td style="padding-left:25px;padding-right:25px;text-indent:2em;font-size:14px;line-height:24px;font-family:'微软雅黑','黑体',arial;color:#525866;">
-                      您的账号 <strong> {{.Account}} </strong> 在七牛云 CDN 加速平台有以下域名已解除冻结，详情如下：
+                      经查询，您的账号 <strong> {{.Account}} </strong> 有以下 SSL 证书已过期。
+                    </td>
+                  </tr>
+                  <tr height="10">
+                    <td></td>
+                  </tr>
+                  <tr height="30">
+                    <td style="padding-left:25px;padding-right:25px;text-indent:2em;font-size:14px;line-height:24px;font-family:'微软雅黑','黑体',arial;color:#525866;">
+                      建议您前往七牛开发者平台重新 <a style="text-decoration:undline;color:#7a8599;padding:0 5px;" href="https://portal.qiniu.com/certificate/ssl" target="_blank">申请证书</a>。
                     </td>
                   </tr>
                   <tr height="15">
                     <td></td>
                   </tr>
                   <tr>
-                    <td style="padding-left:25px;padding-right:25px;font-family:'微软雅黑','黑体',arial;">
+                    <td style="padding-left:25px;font-family:'微软雅黑','黑体',arial;">
                       <table border="0" cellpadding="0" cellspacing="0" style="text-align:left;border-collapse:collapse;border-color:#ddd;width:500px;word-break:break-all;font-size:14px;line-height:24px;color:#525866;">
                         <thead style="background-color:#f0f0f0;">
                           <tr>
-                            <th style="padding:7px 10px;text-align:left;border:1px solid #ddd;">域名列表</th>
-                            <th style="padding:7px 10px;text-align:left;border:1px solid #ddd;">解冻时间</th>
+                            <th style="padding:7px 10px;text-align:left;border:1px solid #ddd;">证书通用名称</th>
+                            <th style="padding:7px 10px;text-align:left;border:1px solid #ddd;">证书备注名</th>
+                            <th style="padding:7px 10px;text-align:left;border:1px solid #ddd;">剩余有效期</th>
                           </tr>
                         </thead>
-                        {{range .Domains}}
+                        {{range .Certs}}
                         {{with .}}
                         <tr>
-                          <td style="padding:7px 10px;text-align:left;border:1px solid #ddd;">{{.Name}}</td>
-                          <td style="width:150px;padding:7px 10px;text-align:left;border:1px solid #ddd;">{{.FrozenTime}}</td>
+                          <td style="padding:7px 10px;text-align:left;border:1px solid #ddd;">{{.CommonName}}</td>
+                          <td style="width:120px;padding:7px 10px;text-align:left;border:1px solid #ddd;">{{.RemarkName}}</td>
+                          <td style="width:75px;padding:7px 10px;text-align:left;border:1px solid #ddd;">已过期</td>
                         </tr>
                         {{end}}
                         {{end}}
@@ -73,7 +83,7 @@
                   </tr>
                   <tr height="30">
                     <td style="padding-left:25px;padding-right:25px;text-indent:2em;font-size:14px;line-height:24px;font-family:'微软雅黑','黑体',arial;color:#525866;">
-                      感谢您使用七牛云CDN，如果您在使用过程中有任何疑问，请参见下方提交工单联系我们。
+                      如果您还有其他疑问，请参见下方提交工单联系我们。
                     </td>
                   </tr>
                   <tr height="10">

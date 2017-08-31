@@ -20,7 +20,7 @@
                           <img src="http://7xkjur.com2.z0.glb.qiniucdn.com/poffineqiniulogo.png" width="54">
                         </a>
                       </td>
-                      <td style="font-size: 24px;color:#292c33;">【七牛云】域名冻结通知</td>
+                      <td style="font-size: 24px;color:#292c33;">【七牛云】域名修改源站成功</td>
                     </tr>
                   </tbody>
                 </table>
@@ -34,7 +34,7 @@
                 <table>
                   <tr height="40">
                     <td style="padding-left:25px;padding-right:25px;font-size:14px;font-family:'微软雅黑','黑体',arial;color:#525866;">
-                      尊敬的七牛云用户，您好:
+                      尊敬的七牛云用户，您好：
                     </td>
                   </tr>
                   <tr height="15">
@@ -42,28 +42,30 @@
                   </tr>
                   <tr height="30">
                     <td style="padding-left:25px;padding-right:25px;text-indent:2em;font-size:14px;line-height:24px;font-family:'微软雅黑','黑体',arial;color:#525866;">
-                      您的账号 <strong> {{.Account}} </strong> 在七牛云 CDN 加速平台有以下域名已冻结，详情如下：
+                      账号 <strong> {{.Account}} </strong>，您的加速域名配置更改已成功，详情如下：
                     </td>
                   </tr>
                   <tr height="15">
                     <td></td>
                   </tr>
                   <tr>
-                    <td style="padding-left:25px;padding-right:25px;font-family:'微软雅黑','黑体',arial;">
+                    <td style="padding-left:25px;font-family:'微软雅黑','黑体',arial;">
                       <table border="0" cellpadding="0" cellspacing="0" style="text-align:left;border-collapse:collapse;border-color:#ddd;width:500px;word-break:break-all;font-size:14px;line-height:24px;color:#525866;">
                         <thead style="background-color:#f0f0f0;">
                           <tr>
                             <th style="padding:7px 10px;text-align:left;border:1px solid #ddd;">域名列表</th>
-                            <th style="padding:7px 10px;text-align:left;border:1px solid #ddd;">冻结时间</th>
-                            <th style="padding:7px 10px;text-align:left;border:1px solid #ddd;">冻结原因</th>
+                            <th style="padding:7px 10px;text-align:left;border:1px solid #ddd;">相关操作</th>
+                            <th style="padding:7px 10px;text-align:left;border:1px solid #ddd;">修改时间</th>
+                            <th style="padding:7px 10px;text-align:left;border:1px solid #ddd;">状态</th>
                           </tr>
                         </thead>
-                        {{range .DataForTpl.tplData}}
+                        {{range .Domains}}
                         {{with .}}
                         <tr>
-                          <td style="padding:7px 10px;text-align:left;border:1px solid #ddd;">{{.name}}</td>
-                          <td style="width:150px;padding:7px 10px;text-align:left;border:1px solid #ddd;">{{.operateAt.Format "2006-01-02 15:04:00"}}</td>
-                          <td style="width:100px;padding:7px 10px;text-align:left;border:1px solid #ddd;">{{.reason}}</td>
+                          <td style="padding:7px 10px;text-align:left;border:1px solid #ddd;">{{.Name}}</td>
+                          <td style="width:100px;padding:7px 10px;text-align:left;border:1px solid #ddd;">{{.OperateType}}</td>
+                          <td style="width:100px;padding:7px 10px;text-align:left;border:1px solid #ddd;">{{.ModifyTime}}</td>
+                          <td style="width:75px;padding:7px 10px;text-align:left;border:1px solid #ddd;">修改成功</td>
                         </tr>
                         {{end}}
                         {{end}}
@@ -75,7 +77,15 @@
                   </tr>
                   <tr height="30">
                     <td style="padding-left:25px;padding-right:25px;text-indent:2em;font-size:14px;line-height:24px;font-family:'微软雅黑','黑体',arial;color:#525866;">
-                      如果您还有其他疑问，请参见下方提交工单联系我们。
+                      最新配置您可以登录七牛 <a style="text-decoration:undline;color:#7a8599;padding:0 5px;" href="https://portal.qiniu.com/domain" target="_blank">开发者平台</a> 查看。
+                    </td>
+                  </tr>
+                  <tr height="10">
+                    <td></td>
+                  </tr>
+                  <tr height="30">
+                    <td style="padding-left:25px;padding-right:25px;text-indent:2em;font-size:14px;line-height:24px;font-family:'微软雅黑','黑体',arial;color:#525866;">
+                      感谢您使用七牛云CDN，如果您在使用过程中有任何疑问，请参见下方提交工单联系我们。
                     </td>
                   </tr>
                   <tr height="10">
