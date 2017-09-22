@@ -1,0 +1,1 @@
+【七牛云】尊敬的七牛云CDN用户，您的账号 {{.Account}} 下证书通用名为 {{$cert := (index .Certs 0)}}{{$length := (len .Certs)}}{{$cert.Name}}{{if gt $length 1}} 等 {{$length}} 个证书{{end}}即将过期，证书过期会影响您的域名访问，为保证您的服务正常使用，请您尽快更换证书。具体详情请查看邮箱： {{.Email}} 的邮件内容。您可登录开发者平台/融合CDN关闭短信通知。
