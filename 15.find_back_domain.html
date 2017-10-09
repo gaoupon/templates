@@ -42,12 +42,23 @@
                   </tr>
                   <tr height="30">
                     <td style="padding-left:25px;padding-right:25px;text-indent:2em;font-size:14px;line-height:24px;font-family:'微软雅黑','黑体',arial;color:#525866;">
-                      您的账号 <strong> {{.Account}} </strong> 找回域名 {{.Domain}} 的申请 {{.Status}}，后续找回结果会通过邮件/短信的方式通知您。
+                      您的账号 <strong> {{.Account}} </strong> 找回域名 {{.Domain}} 的申请 {{.StateName}}{{if eq .Status 1}}，后续找回结果会通过邮件/短信的方式通知您{{end}}。
                     </td>
                   </tr>
+                  {{if eq .Status 3}}
+                  <tr height="5">
+                    <td></td>
+                  </tr>
+                  <tr height="30">
+                    <td style="padding-left:25px;padding-right:25px;text-indent:2em;font-size:14px;line-height:24px;font-family:'微软雅黑','黑体',arial;color:#525866;">
+                      失败原因：未验证通过。
+                    </td>
+                  </tr>
+                  {{end}}
                   <tr height="15">
                     <td></td>
                   </tr>
+                  {{if ne .Status 2}}
                   <tr height="30">
                     <td style="padding-left:25px;padding-right:25px;font-size:14px;line-height:24px;font-family:'微软雅黑','黑体',arial;color:#525866;">
                       注意：
@@ -63,6 +74,7 @@
                       </ul>
                     </td>
                   </tr>
+                  {{end}}
                   <tr height="15">
                     <td></td>
                   </tr>
