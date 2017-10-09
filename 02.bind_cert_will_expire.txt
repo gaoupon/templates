@@ -1,0 +1,1 @@
+【七牛云】尊敬的七牛云CDN用户，您的账号 {{.Account}} 下 {{$domain := (index .Domains 0)}}{{$length := (len .Domains)}}{{$domain.Name}}{{if gt $length 1}} 等 {{$length}} 个域名{{end}}绑定的证书即将过期，为保证您的服务正常使用，请您尽快更换证书。具体详情请查看邮箱：{{.Email}} 的邮件内容。您可登录开发者平台/融合CDN关闭短信通知。

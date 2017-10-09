@@ -1,0 +1,1 @@
+【七牛云】尊敬的七牛云CDN用户，您的账号 {{.Account}} 下 {{$domain := (index .Domains 0)}}{{$length := (len .Domains)}}{{$domain.Name}}{{if gt $length 1}} 等 {{$length}} 个域名{{end}}已冻结/停用90天，至今没有解冻/启用且没有任何操作记录，我司将于3天后删除以上域名。具体详情请查看邮箱： {{.Email}} 的邮件内容。您可登录开发者平台/融合CDN关闭短信通知。
